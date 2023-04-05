@@ -12,9 +12,6 @@ using System.Xml.Linq;
 using System.IO;
 using System.Net;
 
-
-
-
 namespace WindowsFormsApplication43
 {
     public partial class Form1 : Form
@@ -31,9 +28,7 @@ namespace WindowsFormsApplication43
 
             city = txtcity.Text;
 
-
-
-            string uri = string.Format("https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=f1db8947a7df5a168cc7cd145c55292f={0}&days=1", city);
+            string uri = string.Format("http://api.weatherapi.com/v1/forecast.xml?key=ccecc38af17842a897155559230404&q={0}&days=1&aqi=no&alerts=no", city);
 
             XDocument doc = XDocument.Load(uri);
 
@@ -48,12 +43,11 @@ namespace WindowsFormsApplication43
 
 
             Bitmap newBitMap = new Bitmap(stream);
-            string maxtemp = (string)doc.Descendants("maxtemp_c").FirstOrDefault();
-            string mintemp = (string)doc.Descendants("mintemp_c").FirstOrDefault();
-
-            string maxwindm= (string)doc.Descendants("maxwind_mph").FirstOrDefault();
-            string maxwindk = (string)doc.Descendants("maxwind_kph").FirstOrDefault();
-            string humidity = (string)doc.Descendants("avghumidity").FirstOrDefault();
+            string avgtemp = (string)doc.Descendants("avgtemp_c").FirstOrDefault();
+            string precipation = (string)doc.Descendants("totalprecip_mm").FirstOrDefault();
+            string maxwindk= (string)doc.Descendants("maxwind_kph").FirstOrDefault();
+            string Condition = (string)doc.Descendants("text").FirstOrDefault();
+            string humidity = (string)doc.Descendants("humidity").FirstOrDefault();
 
 
             string country = (string)doc.Descendants("country").FirstOrDefault();
@@ -63,11 +57,11 @@ namespace WindowsFormsApplication43
             Bitmap icon = newBitMap;
 
 
-            txtmaxtemp.Text = maxtemp;
-            txtmintemp.Text = mintemp;
+            txtmaxtemp.Text = avgtemp;
+            txtmintemp.Text = precipation;
 
-            txtwindm.Text = maxwindm;
-            txtwindk.Text = maxwindk;
+            txtwindm.Text = maxwindk;
+            txtwindk.Text = Condition;
 
             txthumidity.Text = humidity;
 
@@ -106,9 +100,7 @@ namespace WindowsFormsApplication43
 
             city = txtcity.Text;
 
-
-
-            string uri = string.Format("https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=f1db8947a7df5a168cc7cd145c55292f={0}&days=7", city);
+            string uri = string.Format("http://api.weatherapi.com/v1/forecast.xml?key=ccecc38af17842a897155559230404&q={0}&days=1&aqi=no&alerts=no", city);
 
             XDocument doc = XDocument.Load(uri);
 
@@ -148,11 +140,6 @@ namespace WindowsFormsApplication43
 
 
         }
-
-
-
-
-
 
     }
 }

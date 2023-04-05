@@ -64,18 +64,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(27, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Max temp";
+            this.label2.Text = "Avg Temp C";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(27, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Min temp";
+            this.label3.Text = "Precipation";
             // 
             // label4
             // 
@@ -91,9 +91,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(27, 207);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 13);
+            this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Wind Speed kph";
+            this.label5.Text = "Condition";
             // 
             // label6
             // 
@@ -178,6 +178,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(30, 307);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(658, 192);
             this.dataGridView1.TabIndex = 16;
             // 
@@ -202,6 +203,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(741, 603);
             this.Controls.Add(this.txtcountry);
             this.Controls.Add(this.button2);
